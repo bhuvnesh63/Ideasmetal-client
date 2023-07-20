@@ -1,30 +1,38 @@
-import React from 'react'
-import './Filter.scss'
-const Filter = ({ data, handelChange }) => {
+import React, { useState, useEffect } from 'react';
+import './Filter.scss';
+import axios from 'axios';
 
+const Filter = () => {
+  const [materials, setMaterials] = useState([]);
 
+  useEffect(() => {
+    const fetchMaterials = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/api/v1/materials');
+        setMaterials(response.data);
+      } catch (error) {
+        console.error('Error fetching materials:', error);
+      }
+    };
 
-  const type = ["Aluminium", "Iron ", "Brass", "Stainless Steel", "Platinum"]
-
-
-  console.log("api", data)
-
+    fetchMaterials();
+  }, []);
   return (
     <>
       <div className="main">
         <div>
-          {type.map((value) => {
-            return <div className='input'>
-              <input type="checkbox" name="type" onChange={handelChange} value={value} id="" />
-              {value}
-            </div>
-          })
-          }
+          <div className="input">
+            {materials?.materials?.map((material) => (
+              <div key={material.id}>
+                <input type="checkbox" name="type" id={material.id} />
+                <label htmlFor={material.id}>{material.MaterialType}</label>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </>
-  )
+  );
+};
 
-}
-
-export default Filter
+export default Filter;

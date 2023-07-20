@@ -4,9 +4,9 @@ import Products from '../Products/Products';
 import useFetch from "../../hooks/useFetch";
 const Category = () => {
     const {id} = useParams();
-    // console.log(id)
-    const {data} = useFetch(`/api/products?populate=*&[filters][categories][id]=${id}`);
-    // console.log(data);
+    console.log(id, 'hhhhhh')
+    const {data} = useFetch(`/api/v1/items?Category_Name=${id}`);
+    // console.log(data,'jjjjjj');
     return <div className="category-main-content">
          <div className="layout">
             <div className="category-title">

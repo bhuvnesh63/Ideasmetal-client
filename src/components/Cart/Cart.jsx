@@ -24,7 +24,7 @@ const Cart = ({ setShowCart }) => {
                 <li onClick={() => setShowCart(false)}><Link className="link" to='/'>Home</Link></li>
                 <li onClick={() => setShowCart(false)}><Link className="link" to='/'>About</Link></li>
                 <li onClick={() => setShowCart(false)}><Link className="link" to="/category">Categories</Link></li>
-                <li onClick={() => setShowCart(false)}><Link className="link" to="/products">All Products</Link></li>
+                <li onClick={() => setShowCart(false)}><Link className="link" to="/items">All Products</Link></li>
                 <li onClick={() => setShowCart(false)}><Link className="link" to="/contact">Contact Us</Link></li>
             </ul>
         </div>
