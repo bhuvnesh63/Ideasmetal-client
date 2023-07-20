@@ -1,0 +1,25 @@
+@import "../../css-config/mixins.scss";
+.About-Container{
+    width: 100%;
+    padding: 10px 20px;
+    @include md{
+        padding: 30px 50px;
+    }
+    .About-content{
+        font-size: 18px;
+        line-height: 30px;
+        padding-bottom: 20px;
+        font-weight: 100;
+        color: rgb(77, 75, 75);
+        .span{
+            font-size: 34px;
+        }
+    }
+    .About-content1{
+        font-size: 18px;
+        line-height: 30px;
+        padding-bottom: 20px;
+        font-weight: 700;
+        color: rgb(22, 22, 22);
+    }
+}
