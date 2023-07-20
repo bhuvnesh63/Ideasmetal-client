@@ -1,6 +1,9 @@
-import "./Products.scss";
+// import "./Products.scss";
+import Product from "./Product/Product";
+import "./products.css"
 
-import Product from './Product/Product'
+
+// import Product from './Product/Product'
 
 const Products = ({ products, innerPage, headingText }) => {
     console.log(products, "deep")

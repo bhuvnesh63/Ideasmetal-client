@@ -2,7 +2,10 @@ import "./Category.scss";
 import { useParams } from 'react-router-dom';
 import Products from '../Products/Products';
 import useFetch from "../../hooks/useFetch";
+
+
 const Category = () => {
+
     const {id} = useParams();
     console.log(id, 'hhhhhh')
     const {data} = useFetch(`/api/v1/items?Category_Name=${id}`);

@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { Context } from '../../../utils/context';
 import { fetchData } from '../../../utils/api';
 
+
+
 const MainProduct = () => {
   const navigate = useNavigate();
   const { products, setProducts } = useContext(Context);
@@ -39,10 +41,11 @@ const MainProduct = () => {
               />
             </div>
             <div className="prod-details">
-              <span className="name">{item.Item_Name}</span>
-              <span className="name">{item.description}</span>
-              <span className="name">{item.Category_Name}</span>
-              <span className="name">{item.material_Name}</span>
+            <span className="name">{item.Category_Name}</span>
+              <span className="item-name">{item.Item_Name}</span>
+              {/* <span className="name">{item.description}</span> */}
+              
+              {/* <span className="name">{item.material_Name}</span> */}
             </div>
           </div>
         ))}

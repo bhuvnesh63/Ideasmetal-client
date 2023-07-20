@@ -7,10 +7,7 @@ import Category from './components/Category/Category';
 import SingleProduct from './components/SingleProduct/SingleProduct';
 import Newsletter from './components/Footer/Newsletter/Newsletter';
 import AppContext from './utils/context';
-
 import MainCat from './components/MainCat/MainCat';
-
-
 import Filter from './components/Header/Search/Filter';
 import Products from './components/Products/Products';
 import Product from './components/Products/Product/Product';
@@ -24,6 +21,7 @@ import CartEmail from './components/Cart/shoppingCart/CartEmail';
 
 function App() {
     return (
+
         <BrowserRouter>
             <AppContext>
                 <Header />
@@ -52,6 +50,7 @@ function App() {
                 <Footer />
             </AppContext>
         </BrowserRouter>
+        
     );
 }
 
