@@ -1,0 +1,35 @@
+.shop-by-category {
+    margin: 25px 0;
+}
+
+.categories {
+
+    gap: 10px;
+    flex-flow: wrap;
+    display: flex;
+}
+
+.category {
+    margin-left: 40px;
+    border-color: black;
+    width: calc(20% - 0px);
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.category-type{
+    margin-left: 40px;
+    /* margin-top: -50px !important; */
+    padding-top: -50px !important;
+}
+
+img {
+    /* margin-left: 50px; */
+    width: 80%;
+    display: block;
+    transition: all ease 0.3s;
+}
+
+img.hover {
+    transform: scale(1.2);
+}
