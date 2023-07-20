@@ -1,0 +1,92 @@
+@import "../../css-config/mixins.scss";
+
+
+
+.cart-panel{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: flex-end;
+    display: flex;
+    z-index: 99;
+    .opac-layer{
+        background-color: rgba(0, 0, 0, 0.5);
+        // background-color: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+    .cart-content{
+        width: 100%;
+        height: 100%;
+        background-color: white;
+        position: relative;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        transform: translateX(100%);
+        animation: slideCartWindow 0.3s ease forwards;
+        @include md{
+            width: 340px;
+        }
+        ul{
+            // margin-top: 30px;
+            background-color: rgb(209, 207, 207);
+        }
+        ul > li{
+            list-style: none;
+            text-align: center;
+            align-items: center;
+            margin-top: 10px;
+            padding: 10px;
+            
+        }
+        ul > li > .link{
+            text-decoration: none;
+        }
+        .cart-header{
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px 15px;
+            // border-bottom: rgba(0, 0, 0, 0.1);
+            .heading{
+                flex-grow: 1;
+                margin-bottom: 0;
+                font-size: 20px;
+                font-weight: 700;
+                text-transform: uppercase;
+            }
+            .close-btn{
+                display: flex;
+                align-items: center;
+                gap: 5px;
+                cursor: pointer;
+                svg {
+                    font-size: 18px;
+                }
+                .text{
+                    text-transform: uppercase;
+                    font-size: 14px;
+                }
+                &:hover{
+                    opacity: 0.5;
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes slideCartWindow {
+    0%{
+        transform: translateX(100%);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
