@@ -20,10 +20,7 @@ const Category = ({ categories }) => {
         <Col sm={3}> */}
        <div className="categories">
        {categories && categories.map((item) => (
-            <div key={item.id} className="category"  onClick={() =>navigate(`/category/${item.id}`)}>
-               
-
-               
+            <div key={item.id} className="category"  onClick={() =>navigate(`/category/${item._id}`)}>
                 <img src={CategoryImage} alt=""  />
                 <span className='category-type'>
                 {item.Category_Type}

@@ -1,15 +1,8 @@
 import "./Search.scss";
 
 import { MdClose } from "react-icons/md";
-
-
-
-
-
 import useFetch from '../../../hooks/useFetch';
 import React, { useEffect, useState } from 'react'
-
-
 import { useNavigate } from 'react-router-dom';
 import Filter from "./Filter";
 import SearchProd from "./SearchProd";
@@ -19,7 +12,8 @@ const Search = ({ setShowShearch }) => {
   const  [query , setQuery] = useState();
   const navigate = useNavigate();
   const [filter, setFilter] = useState([]);
-  let { data } = useFetch(`/api/products?populate=*&filters[title][$contains]=${query}`);
+  // let { data } = useFetch(`/api/products?populate=*&filters[title][$contains]=${query}`);
+  let { data } = useFetch(`/api/v1/items?Category_Name=`);
   const [filterdata, setFilterdata] = useState([]);
 
   const onChange = (e) =>{

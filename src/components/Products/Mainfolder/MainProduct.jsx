@@ -24,7 +24,7 @@ const MainProduct = () => {
       console.error(error);
     }
   };
-
+// console.log(products,"pp")
   return (
     <div className="shop">
       <div className="categories">
@@ -32,7 +32,7 @@ const MainProduct = () => {
           <div
             key={item.id}
             className="product-card"
-            onClick={() => navigate(`/item/${item.id}`)}
+            onClick={() => navigate(`/item/${item._id}`)}
           >
             <div className="thumbnail">
               <img

@@ -21,7 +21,9 @@ import { Context } from "../../utils/context";
 const SingleProduct = () => {
     const [quantity, setQuantity] = useState(1); 
     const { id } = useParams();
+    // console.log("idd",id)
     const { data } = useFetch(`/api/v1/item/${id}`);
+    // console.log("ffdddddddd",data)
 
     const {handleAddToCart} = useContext(Context);
 
@@ -36,15 +38,15 @@ const SingleProduct = () => {
     }
 
     if(!data) return;
-
-    const product = data.items[0]
-    console.log(product,"meet")
+    const product = data.item
+    console.log(product,"kkkkkkkkkkkkkkkkkkkkkkkkk")
+    
 
     return <div className="single-product-main-content">
         <div className="layout">
             <div className="single-product-page">
                 <div className="left">
-                    <img src={process.env.REACT_APP_URL + product.img.data[0].attributes.url} alt="" />
+                    {/* <img src={process.env.REACT_APP_URL + product.img.data[0].attributes.url} alt="" /> */}
                 </div>
                 <div className="right">
                     <span className="name">{product.Item_Name}</span>
@@ -69,7 +71,7 @@ const SingleProduct = () => {
                     <div className="info-item">
                         <span className="text-bold">
                             Category :
-                            <span> {product.categories.data[0].attributes.title}</span>
+                            {/* <span> {product.categories.data[0].attributes.title}</span> */}
                         </span>
                         <span className="text-bold">
                             Share:
@@ -85,7 +87,7 @@ const SingleProduct = () => {
 
                 </div>
             </div>
-            <RelatedProducts productId = {id} categoryId = {product.categories.data[0].id} />
+            {/* <RelatedProducts productId = {id} categoryId = {product.categories.data[0].id} /> */}
         </div>
     </div>;
 };
