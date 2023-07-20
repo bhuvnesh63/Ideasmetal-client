@@ -1,6 +1,9 @@
-import "./Products.scss";
+// import "./Products.scss";
+import Product from "./Product/Product";
+import "./products.css"
 
-import Product from './Product/Product'
+
+// import Product from './Product/Product'
 
 const Products = ({products, innerPage, headingText }) => {
     console.log(products,"deep")
@@ -8,8 +11,7 @@ const Products = ({products, innerPage, headingText }) => {
         {!innerPage && <div className="sec-heading">{headingText}</div>}
         <div className="products">
             {products && products.map(item =>(
-                 <Product key={item.id} id={item.id} data={item}/>
-
+                   <Product key={item.id} id={item.id} data={item}/>
             ))}
         </div>
     </div>
