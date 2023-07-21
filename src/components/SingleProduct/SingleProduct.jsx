@@ -1,6 +1,6 @@
 import "./SingleProduct.scss";
 
-import {FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaPinterest, FaCartPlus} from 'react-icons/fa';
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaPinterest, FaCartPlus } from 'react-icons/fa';
 
 import prod from '../../assets/products/speaker-prod-1.webp';
 
@@ -19,13 +19,13 @@ import { Context } from "../../utils/context";
 
 
 const SingleProduct = () => {
-    const [quantity, setQuantity] = useState(1); 
+    const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
     // console.log("idd",id)
     const { data } = useFetch(`/api/v1/item/${id}`);
     // console.log("ffdddddddd",data)
 
-    const {handleAddToCart} = useContext(Context);
+    const { handleAddToCart } = useContext(Context);
 
     const increment = () => {
         setQuantity((prevState) => prevState + 1);
@@ -37,10 +37,10 @@ const SingleProduct = () => {
         });
     }
 
-    if(!data) return;
+    if (!data) return;
     const product = data.item
-    console.log(product,"kkkkkkkkkkkkkkkkkkkkkkkkk")
-    
+    // console.log(product,"kkkkkkkkkkkkkkkkkkkkkkkkk")
+
 
     return <div className="single-product-main-content">
         <div className="layout">
@@ -50,7 +50,8 @@ const SingleProduct = () => {
                 </div>
                 <div className="right">
                     <span className="name">{product.Item_Name}</span>
-                    <span className="material">Material : <span className="spn1">{product.material}</span></span>
+                    <span className="material">Material : <span className="spn1">{product.material_Name}</span></span>
+
                     {/* <span className="price">&#8377;{product.price}</span> */}
                     <span className="desc">{product.desc}</span>
 
@@ -61,27 +62,22 @@ const SingleProduct = () => {
                             <span onClick={increment}>+</span>
                         </div>
                         <button className="add-to-cart-button" onClick={() => {
-                            handleAddToCart(data.data[0], quantity)
+                            handleAddToCart(data.item[0], quantity)
                             setQuantity(1);
                         }}>
-                            <FaCartPlus size={20}/>
+                            <FaCartPlus size={20} />
                             ADD TO CART
                         </button>
                     </div>
                     <div className="info-item">
                         <span className="text-bold">
                             Category :
-                            {/* <span> {product.categories.data[0].attributes.title}</span> */}
+                            <span className="spn1"> {product.Category_Name}</span>
                         </span>
+                        <hr />
                         <span className="text-bold">
-                            Share:
-                            <span className="social-icons">
-                                <FaFacebookF size={16}/>
-                                <FaTwitter size={16}/>
-                                <FaInstagram size={16}/>
-                                <FaLinkedinIn size={16}/>
-                                <FaPinterest size={16}/>
-                            </span>
+                            Description :
+                            <span className="spn1"> {product.description}</span>
                         </span>
                     </div>
 
