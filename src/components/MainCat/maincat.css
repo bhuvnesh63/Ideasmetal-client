@@ -1,15 +1,15 @@
 .category-card{
     width: 15rem;
     /* height: 500px; */
-    /* background-color: rgba(207, 194, 194, 0.848); */
-    /* background-color: #f9f9f9 !important; */
-    background-color: rgba(56, 44, 44, 0.89) !important;
+    /* background-color: rgba(207, 194, 194, 0.848) !important; */
+    background-color: #f9f9f9 !important;
+    /* background-color: rgba(56, 44, 44, 0.89) !important; */
     /* opacity: 0.9 !important; */
     margin-top: 30px;
 }
-.category-cardName{
+/* .category-cardName{
     color: white !important;
-}
+} */
 
 /* .categories{
     background-color: rgb(209, 205, 205);
