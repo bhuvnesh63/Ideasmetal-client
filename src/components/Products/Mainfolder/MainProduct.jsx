@@ -12,21 +12,9 @@ const MainProduct = () => {
   const navigate = useNavigate();
   const { products, setProducts } = useContext(Context);
   const { categories, setCategories } = useContext(Context);
-  const [materials, setMaterials] = useState([]);
+  const { materials, setMaterials } = useContext(Context);
 
 
-  useEffect(() => {
-    const fetchMaterials = async () => {
-      try {
-        const response = await axios.get('http://localhost:4000/api/v1/materials');
-        setMaterials(response.data);
-      } catch (error) {
-        console.error('Error fetching materials:', error);
-      }
-    };
-
-    fetchMaterials();
-  }, []);
 
   useEffect(() => {
     if (!products) {
@@ -39,8 +27,11 @@ const MainProduct = () => {
       fetchCategories();
     }
   }, []);
-
-
+  useEffect(() => {
+    if (!materials) {
+      fetchMaterials();
+    }
+  }, []);
 
   const fetchProducts = async () => {
     try {
@@ -55,6 +46,15 @@ const MainProduct = () => {
     try {
       const response = await fetchData('/api/v1/categories');
       setCategories(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+  const fetchMaterials = async () => {
+    try {
+      const response = await fetchData('/api/v1/materials');
+      setMaterials(response);
     } catch (error) {
       console.error(error);
     }

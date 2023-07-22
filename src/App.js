@@ -34,7 +34,7 @@ function App() {
                         {/* <Route path='/filter' element={< Filter/>}/> */}
                         {/* <Route path='/filter' element={<MainFiter />}/> */}
                         {/* <Route path='/strapi' element={< StrapiDataFetcher/>}/> */}
-                        <Route path='/category' element={< MainCat/>}/>
+                        {/* <Route path='/category' element={< MainCat/>}/> */}
                         <Route path='/items' element={<MainProduct />}/>
                         {/* <Route path='/prod' element={<Products/>}/> */}
                         <Route path='/ccc' element={< CartEmail />} />

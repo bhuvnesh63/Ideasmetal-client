@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Filter.scss';
 import axios from 'axios';
 
-const Filter = () => {
+const Filter = ({handleChange}) => {
   const [materials, setMaterials] = useState([]);
 
   useEffect(() => {
@@ -17,6 +17,8 @@ const Filter = () => {
 
     fetchMaterials();
   }, []);
+
+  
   return (
     <>
       <div className="main">
@@ -24,7 +26,7 @@ const Filter = () => {
           <div className="input">
             {materials?.materials?.map((material) => (
               <div key={material.id}>
-                <input type="checkbox" name="type" id={material.id} />
+                <input type="checkbox" key={material.id} value={material.MaterialType} name="type" id={material.id} onChange={handleChange}/>
                 <label htmlFor={material.id}>{material.MaterialType}</label>
               </div>
             ))}

@@ -6,6 +6,7 @@ export const Context = createContext();
 
 const AppContext = ({ children }) => {
     const [categories, setCategories] = useState();
+    const [materials, setMaterials] = useState();
     const [products, setProducts] = useState();
     const [cartItems, setCartItems] = useState([]);
     const [cartCount, setCartCount] = useState();
@@ -57,6 +58,8 @@ const AppContext = ({ children }) => {
                 setCategories,
                 products,
                 setProducts,
+                materials,
+                setMaterials,
                 cartItems,
                 setCartItems,
                 cartCount,
