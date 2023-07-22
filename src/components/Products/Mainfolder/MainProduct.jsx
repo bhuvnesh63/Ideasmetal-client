@@ -64,6 +64,11 @@ const MainProduct = () => {
     return <div>No categories available</div>;
   }
 
+  
+
+
+
+
   return (
     <>
       <Container fluid>
