@@ -39,18 +39,18 @@ const { categories } = useContext(Context);
         </div>
       </div>
       </div>
-      <div className="col">
+      {/* <div className="col">
         <div className="title">Categories</div>
         { categories?.data?.map((item) => (
           <span key={item.id} className="text" onClick={() =>navigate(`/category/${item.id}`)}>{item.attributes.title}</span>
           ))}
-        </div>
+        </div> */}
       <div className="col">
         <div className="title">Pages</div>
         <span className="text" onClick={() => navigate('/')}>Home</span>
           <span className="text" onClick={() => navigate('/about')}>About</span>
           <span className="text" onClick={() => navigate('/category')}>Categories</span>
-          <span className="text" onClick={() => navigate('/products')}>All Products</span>
+          <span className="text" onClick={() => navigate('/items')}>All Products</span>
           <span className="text" onClick={() => navigate('/contact')}>Contact Us</span>
         </div>
     </div>
