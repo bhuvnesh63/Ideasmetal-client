@@ -26,6 +26,18 @@ padding-bottom: 20px !important;
     padding-bottom: 15px;
 }
 
+.category-dropdown{
+    width: 260px !important;
+    margin-left: 30px;
+    text-align: left !important;
+
+}
+.category-items{
+    margin-left: 20px;
+    font-size: 20px;
+
+}
+
 
 
 
