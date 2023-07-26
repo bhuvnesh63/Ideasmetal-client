@@ -10,18 +10,18 @@ const ShoppingCartItems = () => {
         {cartItems.map(item => (
         <div key={item.id} className="cart-product">
             <div className="img-container">
-                <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" />    
+                {/* <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" />     */}
             </div>   
             <div className="prod-details">
                 <span className='name'>
-                    {item.attributes.title}
+                    {item.Item_Name}
                 </span>
-                <div>{item.attributes.material}</div>
+                <div>{item.material_Name}</div>
                 <div>{item.id}</div>
                 <MdClose className='close-btn' onClick={() => handleRemoveFromCart(item)}/> 
                 <div className="quantity-buttons">
                             <span onClick={()=>handleCartProductQuantity('dec', item)}>-</span>
-                            <span>{item.attributes.quantity}</span>
+                            <span>{item.quantity}</span>
                             <span onClick={()=>handleCartProductQuantity('inc', item)}>+</span>
                     </div>
             </div> 

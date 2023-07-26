@@ -23,7 +23,7 @@ const SingleProduct = () => {
     const { id } = useParams();
     // console.log("idd",id)
     const { data } = useFetch(`/api/v1/item/${id}`);
-    // console.log("ffdddddddd",data)
+    // console.log("ffdddddddd",data
 
     const { handleAddToCart } = useContext(Context);
 
@@ -62,7 +62,7 @@ const SingleProduct = () => {
                             <span onClick={increment}>+</span>
                         </div>
                         <button className="add-to-cart-button" onClick={() => {
-                            handleAddToCart(data.item[0], quantity)
+                            handleAddToCart(product, quantity, id)
                             setQuantity(1);
                         }}>
                             <FaCartPlus size={20} />

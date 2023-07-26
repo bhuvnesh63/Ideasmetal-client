@@ -22,13 +22,16 @@ const CartEmail = () => {
                 <tr><th>Products</th><th>Material</th><th>Product Id</th></tr>
                 ${cartItems.map((item) => `
                   <tr>
-                    <td>${item.attributes.title}</td>
-                    <td>${item.attributes.title}</td>
+                  <td>${item.image}</td>
+                    <td>${item.Item_Name}</td>
+                    <td>${item.material_Name}</td>
+                    <td>${item.quantity}</td>
                     <td>${item.id}</td>
                   </tr>
                 `).join('')}
               </table>`
     };
+
     if (window.Email) {
       window.Email.send(config).then(() => alert("Email sent successfully"));
     }

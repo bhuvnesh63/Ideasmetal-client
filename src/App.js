@@ -15,6 +15,7 @@ import MainProduct from './components/Products/Mainfolder/MainProduct';
 import About from './components/About/About';
 import Search from './components/Header/Search/Search';
 import CartEmail from './components/Cart/shoppingCart/CartEmail';
+import SearchProd from './components/Header/Search/SearchProd';
 // import SearchProd from './components/Header/Search/SearchProd';
 // import Prod from './components/Header/Search/Prod';
 
@@ -39,6 +40,8 @@ function App() {
                         {/* <Route path='/prod' element={<Products/>}/> */}
                         <Route path='/ccc' element={< CartEmail />} />
                         <Route path="/search" element={<Search />} />
+                        <Route exact path="/search-results" element={<SearchProd/>} />
+
                         <Route path='/about' element={<About />}/>
                         <Route path='/item/:id' element={<SingleProduct/>}/>
                         {/* <Route path="/contact" element={<Newsletter/>}/> */}

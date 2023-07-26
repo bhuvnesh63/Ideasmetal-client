@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import Filter from "./Filter";
 import SearchProd from "./SearchProd";
 
-const Search = ({ setShowShearch }) => {
+const Search = () => {
   const [query, setQuery] = useState();
   const navigate = useNavigate();
   const [filter, setFilter] = useState([]);
@@ -66,8 +66,8 @@ const Search = ({ setShowShearch }) => {
             <div className="search-results">
               {filterdata?.map(item => (
                 <div key={item.id} className="search-result-item" onClick={() => {
-                  navigate("/product/" + item.id)
-                  setShowShearch(false);
+                  navigate("/item/" + item._id)
+                  // setShowShearch(false);
                 }}>
                   <div className="img-container">
                     {/* <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" /> */}
@@ -84,7 +84,7 @@ const Search = ({ setShowShearch }) => {
           </div>
         </div>
       </div>
-      <SearchProd />
+      {/* <SearchProd /> */}
     </>
   );
 };
