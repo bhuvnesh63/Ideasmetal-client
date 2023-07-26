@@ -13,46 +13,65 @@ const AppContext = ({ children }) => {
     const location = useLocation();
 
     useEffect(() => {
-        window.scrollTo(0 , 0)
-    },[location])
+        window.scrollTo(0, 0)
+    }, [location])
+
+    const handleAddToCart = (product, quantity) => {
+        const existingItem = cartItems.find((item) => item._id === product._id);
+
+        if (existingItem) {
+            const updatedCartItems = cartItems.map((item) => {
+                if (item._id === product._id) {
+                    return { ...item, quantity: item.quantity + quantity };
+                } else {
+                    return item;
+                }
+            });
+
+            setCartItems(updatedCartItems);
+        } else {
+            setCartItems([...cartItems, { ...product, quantity }]);
+        }
+    };
+
+
+
+
+    const handleRemoveFromCart = (product) => {
+        let items = [...cartItems];
+        items = items.filter(p => p._id !== product._id)
+        setCartItems(items)
+    }
+
+
+
+    const handleCartProductQuantity = (action, item) => {
+        const updatedCartItems = cartItems.map((cartItem) => {
+          if (cartItem._id === item._id) {
+            let newQuantity = cartItem.quantity;
+            if (action === 'inc') {
+              newQuantity += 1;
+            } else if (action === 'dec') {
+              newQuantity -= 1;
+              if (newQuantity < 0) {
+                newQuantity = 0;
+              }
+            }
+            return { ...cartItem, quantity: newQuantity };
+          }
+          return cartItem;
+        });
+    
+        setCartItems(updatedCartItems);
+      };
+    
 
     useEffect(() => {
-        let count = 0;
-        cartItems.map(item => count += item.attributes.quantity)
-        setCartCount(count);
-    })
-
-        const handleAddToCart = (product, quantity) => {
-            let items = [...cartItems];
-            let index = items.findIndex(p => p.id === product.id)
-            if(index !== -1){
-                items[index].attributes.quantity += quantity
-            }else {
-                product.attributes.quantity = quantity
-                items = [...items, product]
-            }
-            setCartItems([...cartItems , product])
-        }
-        const handleRemoveFromCart = (product) => {
-            let items = [...cartItems];
-            items = items.filter(p => p.id !== product.id)
-            setCartItems(items)
-        }
-        const handleCartProductQuantity = (type, product) => {
-            let items = [...cartItems];
-            let index = items.findIndex(p => p.id === product.id)
-            if(type === 'inc'){
-                items[index].attributes.quantity += 1
-            } else if( type === 'dec'){
-                if(items[index].attributes.quantity === 1) return;
-                items[index].attributes.quantity -= 1
-            }
-            setCartItems(items)
-        }
-
+        console.log(cartItems, "deepanshu");
+    }, [cartItems]);
 
     return (
-        <Context.Provider 
+        <Context.Provider
             value={{
                 categories,
                 setCategories,
@@ -67,7 +86,7 @@ const AppContext = ({ children }) => {
                 handleAddToCart,
                 handleRemoveFromCart,
                 handleCartProductQuantity
-        }}>
+            }}>
             {children}
         </Context.Provider>
     )

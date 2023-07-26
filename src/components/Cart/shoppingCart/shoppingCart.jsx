@@ -1,7 +1,7 @@
 import "./shoppingCart.scss";
 
-import {MdClose} from 'react-icons/md';
-import {BsCartX} from 'react-icons/bs';
+import { MdClose } from 'react-icons/md';
+import { BsCartX } from 'react-icons/bs';
 
 import { Link, useNavigate } from "react-router-dom";
 // import { CgShoppingCart } from "react-icons/cg";
@@ -9,11 +9,14 @@ import { Link, useNavigate } from "react-router-dom";
 import ShoppingCartItems from "./ShoppingCartItems";
 import { useContext, useState } from "react";
 
-import { Context } from "../../../utils/context";
+import { Context} from "../../../utils/context";
 import CartEmail from "./CartEmail";
+
+
 const ShoppingCart = ({ setShowShoppingCart }) => {
-    const {cartItems} = useContext(Context);
+    const { cartItems } = useContext(Context);
     const navigate = useNavigate()
+    console.log(cartItems,"createconetc")
     return <div className="cart-panel">
         <div className="opac-layer" onClick={() => setShowShoppingCart(false)}>
         </div>
@@ -28,22 +31,22 @@ const ShoppingCart = ({ setShowShoppingCart }) => {
                 </span>
             </div>
             <hr />
-            {!cartItems?.length &&(<div className="empty-cart">
+            {!cartItems?.length && (<div className="empty-cart">
                 <BsCartX />
                 <span>No Products In The Cart</span>
                 <button className="return-btn" onClick={() => setShowShoppingCart(false)}>
-                    RETURN TO SHOP  
+                    RETURN TO SHOP
                 </button>
             </div>)}
-            {!!cartItems?.length &&(<>
+            {!!cartItems?.length && (<>
                 <ShoppingCartItems />
                 <div className="footer">
                     <div className="button">
-                    <div className="button">
-                        <button className="send-mail" >
-                            <CartEmail />
-                        </button>
-                    </div>
+                        <div className="button">
+                            <button className="send-mail" >
+                                <CartEmail />
+                            </button>
+                        </div>
                     </div>
                 </div>
             </>)}

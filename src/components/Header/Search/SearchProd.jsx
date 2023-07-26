@@ -19,9 +19,9 @@ const SearchProd = () => {
     <div className="shop">
       <div className="categories">
         {products?.items?.data?.map((item) => (
-          <div key={item.id} className="product-card" onClick={() => navigate(`/category/${item.id}`)}>
+          <div key={item.id} className="product-card" >
             <div className="thumbnail">
-              <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" />
+              {/* <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" /> */}
             </div>
             <div className="prod-details">
               <span className="name">{item.Item_Name}</span>
@@ -38,8 +38,3 @@ const SearchProd = () => {
 }
 
 export default SearchProd
-
-
-
-{/* <span className="pric">&#8377;{data.price}</span> */ }
-{/* <span className="pric">&#8377;{data.desc}</span> */ }  

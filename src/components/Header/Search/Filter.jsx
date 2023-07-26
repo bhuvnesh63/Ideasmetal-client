@@ -1,24 +1,27 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
+import { fetchData } from '../../../utils/api';
+import { Context } from '../../../utils/context';
 import './Filter.scss';
 import axios from 'axios';
 
-const Filter = ({handleChange}) => {
-  const [materials, setMaterials] = useState([]);
+const Filter = ({ handleChange }) => {
+
+  const { materials, setMaterials } = useContext(Context);
 
   useEffect(() => {
-    const fetchMaterials = async () => {
-      try {
-        const response = await axios.get('http://localhost:4000/api/v1/materials');
-        setMaterials(response.data);
-      } catch (error) {
-        console.error('Error fetching materials:', error);
-      }
-    };
-
     fetchMaterials();
   }, []);
 
-  
+  const fetchMaterials = async () => {
+    try {
+      const response = await fetchData('/api/v1/materials');
+      setMaterials(response);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
   return (
     <>
       <div className="main">
@@ -26,7 +29,7 @@ const Filter = ({handleChange}) => {
           <div className="input">
             {materials?.materials?.map((material) => (
               <div key={material.id}>
-                <input type="checkbox" key={material.id} value={material.MaterialType} name="type" id={material.id} onChange={handleChange}/>
+                <input className='materil-input' type="checkbox" key={material.id} value={material.MaterialType} name="type" id={material.id} onChange={handleChange} />
                 <label htmlFor={material.id}>{material.MaterialType}</label>
               </div>
             ))}
