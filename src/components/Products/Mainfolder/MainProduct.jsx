@@ -150,8 +150,8 @@ const MainProduct = () => {
                     >
                       <div className="thumbnail">
                         <img
-                          src="https://ecommerce.rrwpthemes.com/wp-content/uploads/2021/04/9e3a9361-404f-444a-84c1-f3e93259af0e-1.jpg"
-                          alt=""
+                          src={`http://localhost:4000/images/${item.image}`} 
+                          alt={item.Item_Name}
                         />
                       </div>
                       <div className="prod-details">

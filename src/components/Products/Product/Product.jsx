@@ -9,7 +9,7 @@ const Product = ({ id, data }) => {
     const navigate = useNavigate();
     return <div className="product-card" onClick={() => navigate("/item/" + id)}>
         <div className="thumbnail mt-5">
-            <img src={Productmage} alt="" />
+            <img   src={`http://localhost:4000/images/${data.image}`} alt={data.Item_Name} />
         </div>
             <div className="prod-details">
               

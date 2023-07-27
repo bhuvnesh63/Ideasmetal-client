@@ -70,8 +70,7 @@ const Search = () => {
                   // setShowShearch(false);
                 }}>
                   <div className="img-container">
-                    {/* <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" /> */}
-                  </div>
+                  <img   src={`http://localhost:4000/images/${item.image}`} alt={item.Item_Name} />                  </div>
                   <div className="prod-details">
                     <span className="name">{item.Item_Name}</span>
                     <span className="desc">{item.description}</span>
