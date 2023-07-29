@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="title">Pages</div>
           <span className="text" onClick={() => navigate('/')}>Home</span>
           <span className="text" onClick={() => navigate('/about')}>About</span>
-          <span className="text" onClick={() => navigate('/products')}>All Products</span>
+          <span className="text" onClick={() => navigate('/items')}>All Products</span>
           <span className="text" onClick={() => navigate('/contact')}>Contact Us</span>
         </div>
       </div>

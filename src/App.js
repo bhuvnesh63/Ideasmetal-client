@@ -29,24 +29,12 @@ function App() {
                     <Routes>
                         <Route  path="/" element={ <Home />} />
                         <Route  path="/category/:id" element={ <Category /> } />
-                        {/* <Route  path="/category" element={ <Category /> } /> */}
-                        {/* <Route  path="/product/:id" element={ <SingleProduct /> } /> */}
-                        {/* <Route path='/footer' element={< Footer/>}/> */}
-                        {/* <Route path='/filter' element={< Filter/>}/> */}
-                        {/* <Route path='/filter' element={<MainFiter />}/> */}
-                        {/* <Route path='/strapi' element={< StrapiDataFetcher/>}/> */}
-                        {/* <Route path='/category' element={< MainCat/>}/> */}
                         <Route path='/items' element={<MainProduct />}/>
-                        {/* <Route path='/prod' element={<Products/>}/> */}
                         <Route path='/ccc' element={< CartEmail />} />
                         <Route path="/search" element={<Search />} />
                         <Route exact path="/search-results" element={<SearchProd/>} />
-
                         <Route path='/about' element={<About />}/>
                         <Route path='/item/:id' element={<SingleProduct/>}/>
-                        {/* <Route path="/contact" element={<Newsletter/>}/> */}
-                        {/* <Route path='/fil' element={< Filter/>}/> */}
-                        {/* <Route path='/ss' element={<SearchProd/>} /> */}
                     </Routes>
                 <Newsletter path="/contact" />
                 

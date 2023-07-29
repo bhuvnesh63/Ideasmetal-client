@@ -1,4 +1,5 @@
-import './MainProduct.css';
+import './MainProduct.scss';
+// import './MainProduct.scss';
 import { useEffect, useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Context } from '../../../utils/context';
@@ -11,9 +12,9 @@ const MainProduct = () => {
   const { products, setProducts } = useContext(Context);
   const { categories, setCategories } = useContext(Context);
   const { materials, setMaterials } = useContext(Context);
-
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [selectedMaterials, setSelectedMaterials] = useState([]);
+  
 
   useEffect(() => {
     fetchProducts();
@@ -48,9 +49,7 @@ const MainProduct = () => {
     }
   };
 
-  if (!products || products.length === 0) {
-    return <div>No Products are available</div>;
-  }
+  
 
   const getCategoryCount = (categoryType) => {
     return products.items.reduce((count, item) => {
@@ -69,7 +68,9 @@ const MainProduct = () => {
       return count;
     }, 0);
   };
-
+  if (!products || products.length === 0) {
+    return <div>No Products are available</div>;
+  }
   const handleCategoryChange = (categoryType) => {
     setSelectedCategories((prevCategories) =>
       prevCategories.includes(categoryType)
@@ -85,14 +86,14 @@ const MainProduct = () => {
         : [...prevMaterials, materialType]
     );
   };
-
+ 
   const filterItems = (item) => {
     const isCategoryMatch = selectedCategories.length === 0 || selectedCategories.includes(item.Category_Name);
     const isMaterialMatch = selectedMaterials.length === 0 || selectedMaterials.includes(item.material_Name);
     return isCategoryMatch && isMaterialMatch;
   };
 
-  const filteredItems = products.items.filter(filterItems);
+  const filteredItems = products?.items ? products.items.filter(filterItems) : [];
 
   return (
     <>
@@ -138,6 +139,7 @@ const MainProduct = () => {
             </div>
           </Col>
 
+
           <Col sm={8}>
             <div className="shop">
               {filteredItems.length > 0 ? (
@@ -149,9 +151,9 @@ const MainProduct = () => {
                       onClick={() => navigate(`/item/${item._id}`)}
                     >
                       <div className="thumbnail">
-                        <img
-                          src="https://ecommerce.rrwpthemes.com/wp-content/uploads/2021/04/9e3a9361-404f-444a-84c1-f3e93259af0e-1.jpg"
-                          alt=""
+                        <img 
+                          src={`http://ec2-13-232-144-169.ap-south-1.compute.amazonaws.com:4000/images/${item.image}`} 
+                          alt={item.Item_Name}
                         />
                       </div>
                       <div className="prod-details">
