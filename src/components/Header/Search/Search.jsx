@@ -6,6 +6,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 import Filter from "./Filter";
 import SearchProd from "./SearchProd";
+import { Col, Container, Row } from "react-bootstrap";
 
 const Search = () => {
   const [query, setQuery] = useState();
@@ -64,26 +65,52 @@ const Search = () => {
           </div>
           <div className="search-result-content">
             <div className="search-results">
-              {filterdata?.map(item => (
-                <div key={item.id} className="search-result-item" onClick={() => {
+              <Container>
+                <Row>
+                {filterdata?.map(item => (
+                  <Col sm={3}>
+                    <div key={item.id} className="search-result-item" onClick={() => {
                   navigate("/item/" + item._id)
                   // setShowShearch(false);
                 }}>
-                  <div className="img-container">
+                 <div className="card" style={{ width: "15rem" }}>
+                    <img  src={`http://ec2-13-232-144-169.ap-south-1.compute.amazonaws.com:4000/images/${item.image}`}
+                      alt={item.Item_Name} className="card-img-top" style={{height:"15rem"}} />
+                    <div className="card-body">
+                      <h5 className="card-title">{item.Item_Name}</h5>
+                      <p className="card-text">
+                      {item.material_Name}
+                    <span  className="float-end"> {item.Category_Name}</span>   </p>
+                     
+                      
+                    </div>
+                  </div>
+                  </div>
+
+                  </Col>
+                  ))}
+                </Row>
+              </Container>
+             
+                
+                  {/* <div className="img-container">
                     <img src={`http://ec2-13-232-144-169.ap-south-1.compute.amazonaws.com:4000/images/${item.image}`}
-                      alt={item.Item_Name} />                  </div>
+                      alt={item.Item_Name} />
+                  </div>
                   <div className="prod-details">
                     <span className="name">{item.Item_Name}</span>
-                    {/* <span className="desc">{item.description}</span> */}
+                    <span className="desc">{item.description}</span>
                     <span className="desc">{item.material_Name}</span>
                     <span className="desc">{item.Category_Name}</span>
-                  </div>
+                  </div> */}
+                 
+
                 </div>
-              ))}
+              
             </div>
           </div>
         </div>
-      </div>
+      {/* </div> */}
       {/* <SearchProd /> */}
     </>
   );
