@@ -70,10 +70,11 @@ const Search = () => {
                   // setShowShearch(false);
                 }}>
                   <div className="img-container">
-                  <img   src={`http://localhost:4000/images/${item.image}`} alt={item.Item_Name} />                  </div>
+                    <img src={`http://ec2-13-232-144-169.ap-south-1.compute.amazonaws.com:4000/images/${item.image}`}
+                      alt={item.Item_Name} />                  </div>
                   <div className="prod-details">
                     <span className="name">{item.Item_Name}</span>
-                    <span className="desc">{item.description}</span>
+                    {/* <span className="desc">{item.description}</span> */}
                     <span className="desc">{item.material_Name}</span>
                     <span className="desc">{item.Category_Name}</span>
                   </div>

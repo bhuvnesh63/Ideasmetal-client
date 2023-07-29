@@ -3,6 +3,7 @@ import { fetchData } from '../../../utils/api';
 import { Context } from '../../../utils/context';
 import './Filter.scss';
 import axios from 'axios';
+import { Col, Container, Row } from 'react-bootstrap';
 
 const Filter = ({ handleChange }) => {
 
@@ -24,18 +25,30 @@ const Filter = ({ handleChange }) => {
 
   return (
     <>
-      <div className="main">
-        <div>
-          <div className="input">
-            {materials?.materials?.map((material) => (
-              <div key={material.id}>
+    <Container>
+      <Row>
+      {materials?.materials?.map((material) => (
+        <Col sm={3}>
+           <div key={material.id}>
                 <input className='materil-input' type="checkbox" key={material.id} value={material.MaterialType} name="type" id={material.id} onChange={handleChange} />
-                <label htmlFor={material.id}>{material.MaterialType}</label>
+                <label className='material-name' htmlFor={material.id}>{material.MaterialType}</label>
               </div>
-            ))}
-          </div>
-        </div>
-      </div>
+
+        </Col>
+        ))}
+      </Row>
+      
+    </Container>
+
+      {/* <div className="main"> */}
+        
+          {/* <div className="input"> */}
+            
+             
+          
+          {/* </div> */}
+      
+      {/* </div> */}
     </>
   );
 };

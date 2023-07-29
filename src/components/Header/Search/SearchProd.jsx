@@ -21,9 +21,10 @@ const SearchProd = () => {
         {products?.items?.data?.map((item) => (
           <div key={item.id} className="product-card" >
             <div className="thumbnail">
-              {/* <img src={process.env.REACT_APP_URL + item.attributes.img.data[0].attributes.url} alt="" /> */}
+              <img src={`http://ec2-13-232-144-169.ap-south-1.compute.amazonaws.com:4000/images/${item.image}`}
+                alt={item.Item_Name} />
             </div>
-            <div className="prod-details">
+            <div className="prod-details" >
               <span className="name">{item.Item_Name}</span>
               <span className="name">{item.Category_Name}</span>
               <span className="name">{item.description}</span>

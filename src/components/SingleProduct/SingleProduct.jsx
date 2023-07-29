@@ -46,7 +46,7 @@ const SingleProduct = () => {
         <div className="layout">
             <div className="single-product-page">
                 <div className="left">
-                    <img  src={`http://localhost:4000/images/${product.image}`}  alt="" />
+                    <img  src={`http://ec2-13-232-144-169.ap-south-1.compute.amazonaws.com:4000/images/${product.image}`}  alt="" />
                 </div>
                 <div className="right">
                     <span className="name">{product.Item_Name}</span>

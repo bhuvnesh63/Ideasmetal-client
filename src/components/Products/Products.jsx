@@ -1,6 +1,6 @@
 // import "./Products.scss";
 import Product from "./Product/Product";
-import "./products.css"
+import "./products.scss"
 
 
 // import Product from './Product/Product'

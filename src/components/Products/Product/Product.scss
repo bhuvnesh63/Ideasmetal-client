@@ -83,7 +83,7 @@ img{
     }
     .thumbnail{
         width: 100%;
-        height: 150px;
+        height: 200px;
         // background-color: rgba(0, 0, 0, 0.05);
         margin-bottom: 20px;
         padding: 25px;
@@ -96,24 +96,33 @@ img{
             display: block;
             width: 100%;
             transition: all ease 0.3s;
+            height: 200px;
         }
     }
     .prod-details{
+        width: 100%;
+        margin-left:20px;
+        margin-top: 0px;
         .name{
             font-size: 12px;
             display: block;
             color: gray;
+            // margin-left: 25px;
             text-overflow: ellipsis;
             white-space: nowrap;
             overflow: hidden;
             @include md{
                 font-size: 15px;
                 margin-bottom: 10px;
+                margin-top: 0px;
             }
           
         }
         .item-name{
             font-weight: bold;
+            // font-size: 13px;
+            margin-right: 20px;
+            text-overflow: ellipsis;
         }
         .price{
             font-size: 18px;
