@@ -55,7 +55,7 @@
         max-width: calc(100% - 20px);
         margin: 0 auto;
         @include md{
-            max-width: 800px;
+            // max-width: 800px;
         }
         .search-results{
             // height: calc(100vh - 110px);
@@ -65,7 +65,7 @@
             // height: calc(100vh - 160px);
             }
             .search-result-item{
-                display: flex;
+                display: flex;  
                 align-items: center;
                 gap: 10px;
                 padding: 10px 0;
@@ -75,11 +75,17 @@
                     background-color: rgba(0, 0, 0, 0.5);
                     width: 60px;
                     flex-shrink: 0;
+                 
                     img{
                         height: 100%;
                         width: 100%;
+                        
                     }
                 }
+                .card{
+                    margin-left: 50px;
+                }
+           
                 .prod-details{
                     overflow: hidden;
                     .name{
@@ -87,14 +93,14 @@
                         white-space: nowrap;
                         overflow: hidden;
                         font-size: 16px;
-                        line-height: 1;
+                        // line-height: 1;
                         margin-bottom: 10px;
                         display: block;
                         font-weight: 600;
                     }
                     .desc{
                         font-size: 14px;
-                        line-height: 1;
+                        // line-height: 1;
                         display: block;
                         text-overflow: ellipsis;
                         white-space: nowrap;
@@ -107,9 +113,6 @@
     }
 }
 
-.main-filt{
-    // display: flex;
-}
 
 
 @keyframes slideSearchWindow{
@@ -120,6 +123,7 @@
         transform: translateY(0);
     }
 }
+
 
 
 // .main-filt{

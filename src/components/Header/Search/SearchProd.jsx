@@ -29,8 +29,7 @@ const SearchProd = () => {
               <span className="name">{item.Category_Name}</span>
               <span className="name">{item.description}</span>
               <span className="name">Material : {item.material_Name}</span>
-              {/* <span className="pric">&#8377;{data.price}</span> */}
-              {/* <span className="pric">&#8377;{data.desc}</span> */}          </div>
+            </div>
           </div>
         ))}
       </div>
