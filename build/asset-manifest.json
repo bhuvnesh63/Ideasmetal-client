@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e100cc76.css",
+    "main.js": "/static/js/main.853f6fb5.js",
+    "static/media/banner-img.png": "/static/media/banner-img.bac09df6db0f139602ac.png",
+    "static/media/newsletter-bg.jpeg": "/static/media/newsletter-bg.b6f22313149bdbb35069.jpeg",
+    "static/media/speaker-prod-1.webp": "/static/media/speaker-prod-1.92704e4cebd276042973.webp",
+    "static/media/images-removebg-preview.png": "/static/media/images-removebg-preview.e2edf8f4742748f1713b.png",
+    "index.html": "/index.html",
+    "main.e100cc76.css.map": "/static/css/main.e100cc76.css.map",
+    "main.853f6fb5.js.map": "/static/js/main.853f6fb5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e100cc76.css",
+    "static/js/main.853f6fb5.js"
+  ]
+}
